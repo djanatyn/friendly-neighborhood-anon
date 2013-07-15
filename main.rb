@@ -9,6 +9,11 @@ require 'mechanize'
 
 anon = Mechanize.new { |robot|
     robot.user_agent_alias = 'Mac Safari'
+    robot.follow_meta_refresh = true
 }
 
-anon.get 'http://zubkoland.tumblr.com/ask'
+page = anon.get 'http://www.tumblr.com/ask_form/zubkoland.tumblr.com'
+
+page.form.field_with(:name => 'post[one]').value= "hello this is a test!"
+
+page.form.submit
