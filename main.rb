@@ -29,7 +29,6 @@ users.each { |user|
   friendly_anon.button(:id => "ask_button").click
 
   puts "#{user}'s day has been brightened!\n"
-  puts
 
 }
 
