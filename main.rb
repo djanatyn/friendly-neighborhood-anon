@@ -15,7 +15,9 @@ friendly_message = ARGV[0]
 users = ['zubkoland']
 
 # the friendly anon rises from the depths
-friendly_anon = Watir::Browser.new :ff
+friendly_anon = Watir::Browser.new :chrome
+
+puts "time to brighten up people's day! :)\n"
 
 users.each { |user|
 
@@ -26,10 +28,11 @@ users.each { |user|
   friendly_anon.textarea(:id => "question").value= friendly_message
   friendly_anon.button(:id => "ask_button").click
 
-  puts "#{user}'s day has been brightened!"
+  puts "#{user}'s day has been brightened!\n"
   puts
 
 }
 
+puts "okay, my work here is done!"
 # his job complete, the friendly anon goes to sleep
 friendly_anon.close
