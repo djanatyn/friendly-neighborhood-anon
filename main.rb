@@ -34,5 +34,6 @@ users.each { |user|
 }
 
 puts "okay, my work here is done!"
+
 # his job complete, the friendly anon goes to sleep
 friendly_anon.close
