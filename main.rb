@@ -19,10 +19,15 @@ friendly_anon = Watir::Browser.new :ff
 
 users.each { |user|
 
+  puts "spreading sunshine to #{user}..."
+
   friendly_anon.goto "http://www.tumblr.com/ask_form/#{user}.tumblr.com"
 
   friendly_anon.textarea(:id => "question").value= friendly_message
   friendly_anon.button(:id => "ask_button").click
+
+  puts "#{user}'s day has been brightened!"
+  puts
 
 }
 
