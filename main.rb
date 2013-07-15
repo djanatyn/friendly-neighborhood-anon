@@ -5,15 +5,26 @@
 # spread the love
 
 require 'rubygems'
-require 'mechanize'
+require 'watir-webdriver'
 
-anon = Mechanize.new { |robot|
-    robot.user_agent_alias = 'Mac Safari'
-    robot.follow_meta_refresh = true
+# we need a friendly message to send to the people we care about
+abort "#{$0} friendly_message" if (ARGV.size != 1)
+friendly_message = ARGV[0]
+
+# these are the people we will send the message to
+users = ['zubkoland']
+
+# the friendly anon rises from the depths
+friendly_anon = Watir::Browser.new :ff
+
+users.each { |user|
+
+  friendly_anon.goto "http://www.tumblr.com/ask_form/#{user}.tumblr.com"
+
+  friendly_anon.textarea(:id => "question").value= friendy_message
+  friendly_anon.button(:id => "ask_button").click
+
 }
 
-page = anon.get 'http://www.tumblr.com/ask_form/zubkoland.tumblr.com'
-
-page.form.field_with(:name => 'post[one]').value= "hello this is a test!"
-
-page.form.submit
+# his job complete, the friendly anon goes to sleep
+friendly_anon.close
