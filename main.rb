@@ -21,7 +21,7 @@ users.each { |user|
 
   friendly_anon.goto "http://www.tumblr.com/ask_form/#{user}.tumblr.com"
 
-  friendly_anon.textarea(:id => "question").value= friendy_message
+  friendly_anon.textarea(:id => "question").value= friendly_message
   friendly_anon.button(:id => "ask_button").click
 
 }
