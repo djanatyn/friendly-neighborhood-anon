@@ -20,7 +20,6 @@ end
 abort "#{$0} username password friendly_message" if (ARGV.size != 3)
 username, password, friendly_message = ARGV
 
-
 logger.debug { 'checking for users to send message to' }
 # place the users you want to send messages to in a file called "users"
 # separate each user on it's own line
@@ -75,7 +74,7 @@ users.each do |user|
       File.open('users_sent', 'a') { |f| f.puts user }
       logger.debug { "message sent to #{user}" }
 
-      # and another message sent!
+     # and another message sent!
       messages_sent += 1
     end
   end
