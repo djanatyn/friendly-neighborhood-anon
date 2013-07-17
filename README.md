@@ -5,5 +5,5 @@ spread happiness and forget sadness
 
 invoke like
 
-  ./main.rb "your message of happiness"
+  ./main.rb username password "your message of happiness"
 
